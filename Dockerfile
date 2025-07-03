@@ -8,6 +8,6 @@ RUN mvn clean package
 # Runtime stage (imagem final leve)
 FROM eclipse-temurin:17-jre-jammy
 WORKDIR /app
-COPY --from=build /app/target/seu-backend-*.jar app.jar
+COPY --from=build /app/target/backend-*.jar app.jar
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "app.jar"]
